@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
     public event Action OnLeftClick;
     public event Action OnRotate;
     public event Action<int> OnNumber;
+    public event Action OnInteract;
     InputPlayerAction inputManager;
 
     void Awake()
@@ -25,7 +26,13 @@ public class InputManager : MonoBehaviour
         inputManager.Player.MouseLeftButton.performed += MouseLeftClick;
         inputManager.Player.Rotate.performed +=RotateObject;
         inputManager.Player.PickNumbers.performed += PickNumbers;
+        inputManager.Player.Interact.performed +=Interacts;
 
+    }
+
+    private void Interacts(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        OnInteract?.Invoke();
     }
 
     private void PickNumbers(UnityEngine.InputSystem.InputAction.CallbackContext context)

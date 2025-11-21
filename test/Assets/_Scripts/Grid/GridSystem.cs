@@ -67,8 +67,19 @@ public class GridSystem : MonoBehaviour
                 }
             }
         }
-        Debug.Log("sa?");
         OnDeletedGrid?.Invoke(deletedPoints);
+    }
+    public List<GridSpec> SearchInGrid(List<Vector3Int> targetPoints)
+    {
+        List<GridSpec> outputList = new List<GridSpec>();
+        foreach(var a in targetPoints)
+        {
+            if (grid.ContainsKey(a))
+            {
+                outputList.Add(grid[a]);
+            }
+        }
+        return outputList;
     }
 
     [ContextMenu("Grid Dict")]

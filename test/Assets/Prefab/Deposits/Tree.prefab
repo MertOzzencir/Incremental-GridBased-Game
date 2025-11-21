@@ -160,3 +160,4 @@ MonoBehaviour:
   objectSizeInAxis: {x: 1, y: 1}
   visual: {fileID: 5655723986895296228}
   index: -1
+  range: {x: 1, y: 1}

@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 3466940712964078405}
   - component: {fileID: 2520174542167329636}
   - component: {fileID: 6296273208284807316}
+  - component: {fileID: 7549404620250429863}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -157,3 +158,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sources
   SourceSOData: {fileID: 11400000, guid: f8dba8a23cec79f4f91fbcb0f3b5cd3a, type: 2}
+--- !u!54 &7549404620250429863
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7363704695722995569}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

@@ -118,6 +118,15 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""5e398b78-2ad7-47fb-828c-e883efcda253"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -241,6 +250,17 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
                     ""action"": ""PickNumbers"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa972f34-6d99-4bb6-9714-25bf2d1871ce"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -252,6 +272,7 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         m_Player_MouseLeftButton = m_Player.FindAction("MouseLeftButton", throwIfNotFound: true);
         m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
         m_Player_PickNumbers = m_Player.FindAction("PickNumbers", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
 
     ~@InputPlayerAction()
@@ -335,6 +356,7 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MouseLeftButton;
     private readonly InputAction m_Player_Rotate;
     private readonly InputAction m_Player_PickNumbers;
+    private readonly InputAction m_Player_Interact;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -358,6 +380,10 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/PickNumbers".
         /// </summary>
         public InputAction @PickNumbers => m_Wrapper.m_Player_PickNumbers;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Interact".
+        /// </summary>
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -393,6 +419,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
             @PickNumbers.started += instance.OnPickNumbers;
             @PickNumbers.performed += instance.OnPickNumbers;
             @PickNumbers.canceled += instance.OnPickNumbers;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         /// <summary>
@@ -413,6 +442,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
             @PickNumbers.started -= instance.OnPickNumbers;
             @PickNumbers.performed -= instance.OnPickNumbers;
             @PickNumbers.canceled -= instance.OnPickNumbers;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         /// <summary>
@@ -474,5 +506,12 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPickNumbers(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

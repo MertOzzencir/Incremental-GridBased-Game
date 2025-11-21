@@ -15,6 +15,7 @@ public class Placement : MonoBehaviour
     private GameObject indicator;
     private RotationState rotationState;
     private Vector2Int assignedSize;
+    private Vector2Int assignedRange;
     private Coroutine targetPositionCO;
 
     void Start()
@@ -23,7 +24,7 @@ public class Placement : MonoBehaviour
         InputManager.Instance.OnLeftClick += PlaceObject;
         InputManager.Instance.OnRotate += RotateObjectByButton;
         indicator = Instantiate(gridIndicatorPrefab);
-        Cursor.visible = false;
+        
     }
     private void Update()
     {
@@ -57,7 +58,6 @@ public class Placement : MonoBehaviour
             {
                 placeObject.Placed();
                 placeObject = null;
-                SetObject(lastPlaceObjectPrefab);
             }
         }
     }
@@ -67,15 +67,22 @@ public class Placement : MonoBehaviour
         placeObject = refGO.GetComponent<IPlaceable>();
         placeObject.GetGameObject().GetComponent<IPickable>().Picked();
         assignedSize = placeObject.GetSize;
+        assignedRange = placeObject.GetRange;
         InitiazeRotation();
     }
     public void RecieveObject(IPlaceable recievedObject)
     {
+        if(targetPositionCO != null)
+            return;
         lastPlaceObjectPrefab = recievedObject;
+        indicator.SetActive(true);
         if (placeObject != null)
         {
             if (placeObject.Index == recievedObject.Index)
             {
+                placeObject.UnPlaced();
+                placeObject = null;
+                indicator.SetActive(false);
                 return;
             }
             else
@@ -116,24 +123,28 @@ public class Placement : MonoBehaviour
                 targetRotation = new Vector3(0, 0, 0);
                 targetPosition = Vector3Int.zero;
                 placeObject.GetSize = assignedSize;
+                placeObject.GetRange = assignedRange;
                 break;
 
             case RotationState.Bati:
                 targetRotation = new Vector3(0, -90, 0);
                 targetPosition = new Vector3Int(assignedSize.y, 0, 0);
                 placeObject.GetSize = new Vector2Int(assignedSize.y, assignedSize.x);
+                placeObject.GetRange = new Vector2Int(assignedRange.y, assignedRange.x);
                 break;
 
             case RotationState.Güney:
                 targetRotation = new Vector3(0, -180, 0);
                 targetPosition = new Vector3Int(assignedSize.x, 0, assignedSize.y);
                 placeObject.GetSize = assignedSize;
+                placeObject.GetRange = assignedRange;
                 break;
 
             case RotationState.Doğu:
                 targetRotation = new Vector3(0, -270, 0);
                 targetPosition = new Vector3Int(0, 0, assignedSize.x);
                 placeObject.GetSize = new Vector2Int(assignedSize.y, assignedSize.x);
+                placeObject.GetRange = new Vector2Int(assignedRange.y, assignedRange.x);
                 break;
         }
         target = Quaternion.Euler(targetRotation);

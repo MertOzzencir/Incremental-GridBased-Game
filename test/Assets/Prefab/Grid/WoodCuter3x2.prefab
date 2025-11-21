@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 1855348551254291311}
   - component: {fileID: 4632739176469811069}
   - component: {fileID: 3743541245404868791}
-  - component: {fileID: 2368993375005148842}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -122,27 +121,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2368993375005148842
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2688708645230486668}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4245045311318697662
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +132,6 @@ GameObject:
   - component: {fileID: 1215536961047301032}
   - component: {fileID: 8645853470324610811}
   - component: {fileID: 997752181559801866}
-  - component: {fileID: 3871796936953695118}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -234,27 +211,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3871796936953695118
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4245045311318697662}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5412580999033655134
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,8 +221,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8076465970633137901}
   - component: {fileID: 5003274208656932974}
+  - component: {fileID: 5534711579428704728}
   m_Layer: 0
-  m_Name: 3x2
+  m_Name: WoodCuter3x2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,3 +260,26 @@ MonoBehaviour:
   objectSizeInAxis: {x: 3, y: 2}
   visual: {fileID: 1081741828559507721}
   index: 1
+  range: {x: 13, y: 8}
+  depositType: 0
+--- !u!65 &5534711579428704728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412580999033655134}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 2.998647, y: 0.9971516, z: 1.9567245}
+  m_Center: {x: 1.4977292, y: 0.50704205, z: 0.98793775}

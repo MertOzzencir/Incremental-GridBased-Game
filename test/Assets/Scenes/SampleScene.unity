@@ -469,6 +469,7 @@ GameObject:
   - component: {fileID: 381373194}
   - component: {fileID: 381373193}
   - component: {fileID: 381373195}
+  - component: {fileID: 381373196}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -524,6 +525,18 @@ MonoBehaviour:
   objectsToPick:
   - {fileID: 7001211323478432963, guid: 80e815d688ff15c44b56a5b95f8d11ed, type: 3}
   - {fileID: 5412580999033655134, guid: 4200f18bd197e4448b5bd6c7c52e8ea4, type: 3}
+--- !u!114 &381373196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381373192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b578eea6fa111534eaa88ed47d94e601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &732484634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,8 +783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   spawnableObject: {fileID: 8926905907452731973, guid: d03579eaed19d694596ad61137588cef, type: 3}
-  totalSpawnAmount: 5
-  spawnTimer: 1
+  totalSpawnAmount: 100
+  spawnTimer: 0.1
   spawnArea: {x: 10, y: 10}
 --- !u!4 &732484635
 Transform:
