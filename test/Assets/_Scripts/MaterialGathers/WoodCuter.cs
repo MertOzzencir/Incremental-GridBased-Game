@@ -8,11 +8,12 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     [SerializeField] private int index;
     [SerializeField] private Vector2Int range;
     [SerializeField] private SourceType depositType;
-    public GameObject Orientation { get => visual; set => value = visual; }
+    public GameObject Orientation { get => visual; set => visual = value; }
     public Vector2Int GetSize { get => objectSizeInAxis; set => objectSizeInAxis = value; }
     public Vector3Int PlacedPosition { get; set; }
     public int Index { get => index; set => value = index; }
     public Vector2Int GetRange { get => range; set => range = value; }
+    public bool IsPlaced { get; set ; }
 
     private List<Vector3Int> positionsInRange = new List<Vector3Int>();
     private Collider objectCollider;
@@ -42,6 +43,7 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     }
     public void Placed()
     {
+        IsPlaced = true;
         Cursor.visible = true;
         objectCollider.enabled = true;
         positionsInRange.Clear();

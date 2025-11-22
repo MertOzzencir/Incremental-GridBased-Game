@@ -93,27 +93,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
             ""id"": ""d43e73e0-101a-4d62-9944-ecdcc7923b78"",
             ""actions"": [
                 {
-                    ""name"": ""MouseLeftButton"",
+                    ""name"": ""BuildModeOn"",
                     ""type"": ""Button"",
                     ""id"": ""f79a6e0c-9752-44d2-9a34-667bdf5f19ce"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Rotate"",
-                    ""type"": ""Button"",
-                    ""id"": ""4286779c-a3b3-4f96-b181-b5fe12c2b87f"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""PickNumbers"",
-                    ""type"": ""Button"",
-                    ""id"": ""631eb984-eb92-487d-a6b5-798f3b98e5fd"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -133,121 +115,11 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d738867b-287e-495a-b7b0-97e1b7cc73d3"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""MouseLeftButton"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""294228fe-45a9-4da0-9600-751a35e44e97"",
-                    ""path"": ""<Keyboard>/r"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Rotate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""903489ce-9915-4ed9-b245-9a73ca05fd20"",
-                    ""path"": ""<Keyboard>/1"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""46544bec-35d2-400c-89ed-5655d92e2e87"",
-                    ""path"": ""<Keyboard>/2"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""5bd78bc1-599c-41ca-8880-5ef96e4b1a49"",
-                    ""path"": ""<Keyboard>/3"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""88657c42-e8c3-4593-ae83-9802733d960c"",
-                    ""path"": ""<Keyboard>/4"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""e49864c3-3441-4d71-b8b9-2fa64d0d979a"",
-                    ""path"": ""<Keyboard>/5"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8f2962ed-5418-4865-9d7c-2b7b87963674"",
-                    ""path"": ""<Keyboard>/6"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""56c58150-8af3-415f-bca6-4a972f6eff49"",
-                    ""path"": ""<Keyboard>/7"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""3451b543-603a-45c6-ac52-55ffb00cb961"",
-                    ""path"": ""<Keyboard>/8"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b54446c4-5b44-4f18-88b1-2b6f1b4b7fa1"",
-                    ""path"": ""<Keyboard>/9"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""PickNumbers"",
+                    ""action"": ""BuildModeOn"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -263,21 +135,202 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BuildMode"",
+            ""id"": ""2fb705f8-d122-4d2c-acbd-cfc8a9b57c6c"",
+            ""actions"": [
+                {
+                    ""name"": ""MouseLeftButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""7ed28aa1-97c9-486e-a56b-a3aa79d8d88e"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""BuildModeOff"",
+                    ""type"": ""Button"",
+                    ""id"": ""8d444693-64c0-42db-afdf-110bba0e0278"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickNumbers"",
+                    ""type"": ""Button"",
+                    ""id"": ""7481b4b1-1e3b-4910-8538-3fcac48c0116"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Rotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""aac07b17-09e2-4a84-ae79-86650dba5943"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""857b81b8-a3c5-4076-bad8-dc9655f07def"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MouseLeftButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ba17a325-7680-44ff-9cf0-c35be9946d66"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""BuildModeOff"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97c852c0-a206-4da0-814e-8f9b16a1131f"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10a228f3-0e14-4d7b-bebc-e502054dd61f"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f2197da1-c926-4ee8-9694-2b146a0002f2"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2329365a-7d27-4e16-bb88-a519359adff3"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4cfbe725-cfae-42dc-a1e4-6c2aad812932"",
+                    ""path"": ""<Keyboard>/5"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""368c9519-b84c-4331-acba-6aeb60d0b8a5"",
+                    ""path"": ""<Keyboard>/6"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83713151-ec20-4cbc-938e-50aa56274c9e"",
+                    ""path"": ""<Keyboard>/7"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""66d9faca-9cbb-4f0d-b910-303e3a8d9dd6"",
+                    ""path"": ""<Keyboard>/8"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""83a9b8b3-7ad9-427a-a73a-04dea6e4ebe0"",
+                    ""path"": ""<Keyboard>/9"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PickNumbers"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5124a41e-57ec-491a-a455-62710e97daa7"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Rotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": []
 }");
         // Player
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
-        m_Player_MouseLeftButton = m_Player.FindAction("MouseLeftButton", throwIfNotFound: true);
-        m_Player_Rotate = m_Player.FindAction("Rotate", throwIfNotFound: true);
-        m_Player_PickNumbers = m_Player.FindAction("PickNumbers", throwIfNotFound: true);
+        m_Player_BuildModeOn = m_Player.FindAction("BuildModeOn", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // BuildMode
+        m_BuildMode = asset.FindActionMap("BuildMode", throwIfNotFound: true);
+        m_BuildMode_MouseLeftButton = m_BuildMode.FindAction("MouseLeftButton", throwIfNotFound: true);
+        m_BuildMode_BuildModeOff = m_BuildMode.FindAction("BuildModeOff", throwIfNotFound: true);
+        m_BuildMode_PickNumbers = m_BuildMode.FindAction("PickNumbers", throwIfNotFound: true);
+        m_BuildMode_Rotate = m_BuildMode.FindAction("Rotate", throwIfNotFound: true);
     }
 
     ~@InputPlayerAction()
     {
         UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, InputPlayerAction.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_BuildMode.enabled, "This will cause a leak and performance issues, InputPlayerAction.BuildMode.Disable() has not been called.");
     }
 
     /// <summary>
@@ -353,9 +406,7 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
     // Player
     private readonly InputActionMap m_Player;
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
-    private readonly InputAction m_Player_MouseLeftButton;
-    private readonly InputAction m_Player_Rotate;
-    private readonly InputAction m_Player_PickNumbers;
+    private readonly InputAction m_Player_BuildModeOn;
     private readonly InputAction m_Player_Interact;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
@@ -369,17 +420,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// </summary>
         public PlayerActions(@InputPlayerAction wrapper) { m_Wrapper = wrapper; }
         /// <summary>
-        /// Provides access to the underlying input action "Player/MouseLeftButton".
+        /// Provides access to the underlying input action "Player/BuildModeOn".
         /// </summary>
-        public InputAction @MouseLeftButton => m_Wrapper.m_Player_MouseLeftButton;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/Rotate".
-        /// </summary>
-        public InputAction @Rotate => m_Wrapper.m_Player_Rotate;
-        /// <summary>
-        /// Provides access to the underlying input action "Player/PickNumbers".
-        /// </summary>
-        public InputAction @PickNumbers => m_Wrapper.m_Player_PickNumbers;
+        public InputAction @BuildModeOn => m_Wrapper.m_Player_BuildModeOn;
         /// <summary>
         /// Provides access to the underlying input action "Player/Interact".
         /// </summary>
@@ -410,15 +453,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
-            @MouseLeftButton.started += instance.OnMouseLeftButton;
-            @MouseLeftButton.performed += instance.OnMouseLeftButton;
-            @MouseLeftButton.canceled += instance.OnMouseLeftButton;
-            @Rotate.started += instance.OnRotate;
-            @Rotate.performed += instance.OnRotate;
-            @Rotate.canceled += instance.OnRotate;
-            @PickNumbers.started += instance.OnPickNumbers;
-            @PickNumbers.performed += instance.OnPickNumbers;
-            @PickNumbers.canceled += instance.OnPickNumbers;
+            @BuildModeOn.started += instance.OnBuildModeOn;
+            @BuildModeOn.performed += instance.OnBuildModeOn;
+            @BuildModeOn.canceled += instance.OnBuildModeOn;
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
@@ -433,15 +470,9 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// <seealso cref="PlayerActions" />
         private void UnregisterCallbacks(IPlayerActions instance)
         {
-            @MouseLeftButton.started -= instance.OnMouseLeftButton;
-            @MouseLeftButton.performed -= instance.OnMouseLeftButton;
-            @MouseLeftButton.canceled -= instance.OnMouseLeftButton;
-            @Rotate.started -= instance.OnRotate;
-            @Rotate.performed -= instance.OnRotate;
-            @Rotate.canceled -= instance.OnRotate;
-            @PickNumbers.started -= instance.OnPickNumbers;
-            @PickNumbers.performed -= instance.OnPickNumbers;
-            @PickNumbers.canceled -= instance.OnPickNumbers;
+            @BuildModeOn.started -= instance.OnBuildModeOn;
+            @BuildModeOn.performed -= instance.OnBuildModeOn;
+            @BuildModeOn.canceled -= instance.OnBuildModeOn;
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
@@ -478,12 +509,163 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
     /// Provides a new <see cref="PlayerActions" /> instance referencing this action map.
     /// </summary>
     public PlayerActions @Player => new PlayerActions(this);
+
+    // BuildMode
+    private readonly InputActionMap m_BuildMode;
+    private List<IBuildModeActions> m_BuildModeActionsCallbackInterfaces = new List<IBuildModeActions>();
+    private readonly InputAction m_BuildMode_MouseLeftButton;
+    private readonly InputAction m_BuildMode_BuildModeOff;
+    private readonly InputAction m_BuildMode_PickNumbers;
+    private readonly InputAction m_BuildMode_Rotate;
+    /// <summary>
+    /// Provides access to input actions defined in input action map "BuildMode".
+    /// </summary>
+    public struct BuildModeActions
+    {
+        private @InputPlayerAction m_Wrapper;
+
+        /// <summary>
+        /// Construct a new instance of the input action map wrapper class.
+        /// </summary>
+        public BuildModeActions(@InputPlayerAction wrapper) { m_Wrapper = wrapper; }
+        /// <summary>
+        /// Provides access to the underlying input action "BuildMode/MouseLeftButton".
+        /// </summary>
+        public InputAction @MouseLeftButton => m_Wrapper.m_BuildMode_MouseLeftButton;
+        /// <summary>
+        /// Provides access to the underlying input action "BuildMode/BuildModeOff".
+        /// </summary>
+        public InputAction @BuildModeOff => m_Wrapper.m_BuildMode_BuildModeOff;
+        /// <summary>
+        /// Provides access to the underlying input action "BuildMode/PickNumbers".
+        /// </summary>
+        public InputAction @PickNumbers => m_Wrapper.m_BuildMode_PickNumbers;
+        /// <summary>
+        /// Provides access to the underlying input action "BuildMode/Rotate".
+        /// </summary>
+        public InputAction @Rotate => m_Wrapper.m_BuildMode_Rotate;
+        /// <summary>
+        /// Provides access to the underlying input action map instance.
+        /// </summary>
+        public InputActionMap Get() { return m_Wrapper.m_BuildMode; }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Enable()" />
+        public void Enable() { Get().Enable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.Disable()" />
+        public void Disable() { Get().Disable(); }
+        /// <inheritdoc cref="UnityEngine.InputSystem.InputActionMap.enabled" />
+        public bool enabled => Get().enabled;
+        /// <summary>
+        /// Implicitly converts an <see ref="BuildModeActions" /> to an <see ref="InputActionMap" /> instance.
+        /// </summary>
+        public static implicit operator InputActionMap(BuildModeActions set) { return set.Get(); }
+        /// <summary>
+        /// Adds <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <param name="instance">Callback instance.</param>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c> or <paramref name="instance"/> have already been added this method does nothing.
+        /// </remarks>
+        /// <seealso cref="BuildModeActions" />
+        public void AddCallbacks(IBuildModeActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BuildModeActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BuildModeActionsCallbackInterfaces.Add(instance);
+            @MouseLeftButton.started += instance.OnMouseLeftButton;
+            @MouseLeftButton.performed += instance.OnMouseLeftButton;
+            @MouseLeftButton.canceled += instance.OnMouseLeftButton;
+            @BuildModeOff.started += instance.OnBuildModeOff;
+            @BuildModeOff.performed += instance.OnBuildModeOff;
+            @BuildModeOff.canceled += instance.OnBuildModeOff;
+            @PickNumbers.started += instance.OnPickNumbers;
+            @PickNumbers.performed += instance.OnPickNumbers;
+            @PickNumbers.canceled += instance.OnPickNumbers;
+            @Rotate.started += instance.OnRotate;
+            @Rotate.performed += instance.OnRotate;
+            @Rotate.canceled += instance.OnRotate;
+        }
+
+        /// <summary>
+        /// Removes <see cref="InputAction.started"/>, <see cref="InputAction.performed"/> and <see cref="InputAction.canceled"/> callbacks provided via <param cref="instance" /> on all input actions contained in this map.
+        /// </summary>
+        /// <remarks>
+        /// Calling this method when <paramref name="instance" /> have not previously been registered has no side-effects.
+        /// </remarks>
+        /// <seealso cref="BuildModeActions" />
+        private void UnregisterCallbacks(IBuildModeActions instance)
+        {
+            @MouseLeftButton.started -= instance.OnMouseLeftButton;
+            @MouseLeftButton.performed -= instance.OnMouseLeftButton;
+            @MouseLeftButton.canceled -= instance.OnMouseLeftButton;
+            @BuildModeOff.started -= instance.OnBuildModeOff;
+            @BuildModeOff.performed -= instance.OnBuildModeOff;
+            @BuildModeOff.canceled -= instance.OnBuildModeOff;
+            @PickNumbers.started -= instance.OnPickNumbers;
+            @PickNumbers.performed -= instance.OnPickNumbers;
+            @PickNumbers.canceled -= instance.OnPickNumbers;
+            @Rotate.started -= instance.OnRotate;
+            @Rotate.performed -= instance.OnRotate;
+            @Rotate.canceled -= instance.OnRotate;
+        }
+
+        /// <summary>
+        /// Unregisters <param cref="instance" /> and unregisters all input action callbacks via <see cref="BuildModeActions.UnregisterCallbacks(IBuildModeActions)" />.
+        /// </summary>
+        /// <seealso cref="BuildModeActions.UnregisterCallbacks(IBuildModeActions)" />
+        public void RemoveCallbacks(IBuildModeActions instance)
+        {
+            if (m_Wrapper.m_BuildModeActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        /// <summary>
+        /// Replaces all existing callback instances and previously registered input action callbacks associated with them with callbacks provided via <param cref="instance" />.
+        /// </summary>
+        /// <remarks>
+        /// If <paramref name="instance" /> is <c>null</c>, calling this method will only unregister all existing callbacks but not register any new callbacks.
+        /// </remarks>
+        /// <seealso cref="BuildModeActions.AddCallbacks(IBuildModeActions)" />
+        /// <seealso cref="BuildModeActions.RemoveCallbacks(IBuildModeActions)" />
+        /// <seealso cref="BuildModeActions.UnregisterCallbacks(IBuildModeActions)" />
+        public void SetCallbacks(IBuildModeActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BuildModeActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BuildModeActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    /// <summary>
+    /// Provides a new <see cref="BuildModeActions" /> instance referencing this action map.
+    /// </summary>
+    public BuildModeActions @BuildMode => new BuildModeActions(this);
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "Player" which allows adding and removing callbacks.
     /// </summary>
     /// <seealso cref="PlayerActions.AddCallbacks(IPlayerActions)" />
     /// <seealso cref="PlayerActions.RemoveCallbacks(IPlayerActions)" />
     public interface IPlayerActions
+    {
+        /// <summary>
+        /// Method invoked when associated input action "BuildModeOn" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBuildModeOn(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnInteract(InputAction.CallbackContext context);
+    }
+    /// <summary>
+    /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "BuildMode" which allows adding and removing callbacks.
+    /// </summary>
+    /// <seealso cref="BuildModeActions.AddCallbacks(IBuildModeActions)" />
+    /// <seealso cref="BuildModeActions.RemoveCallbacks(IBuildModeActions)" />
+    public interface IBuildModeActions
     {
         /// <summary>
         /// Method invoked when associated input action "MouseLeftButton" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
@@ -493,12 +675,12 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMouseLeftButton(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "BuildModeOff" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnRotate(InputAction.CallbackContext context);
+        void OnBuildModeOff(InputAction.CallbackContext context);
         /// <summary>
         /// Method invoked when associated input action "PickNumbers" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
@@ -507,11 +689,11 @@ public partial class @InputPlayerAction: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnPickNumbers(InputAction.CallbackContext context);
         /// <summary>
-        /// Method invoked when associated input action "Interact" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// Method invoked when associated input action "Rotate" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
         /// </summary>
         /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-        void OnInteract(InputAction.CallbackContext context);
+        void OnRotate(InputAction.CallbackContext context);
     }
 }

@@ -12,6 +12,7 @@ public class Deposits : MonoBehaviour, IPlaceable
     public Vector3Int PlacedPosition { get; set; }
     public int Index { get => index ; set => value = index ; }
     public Vector2Int GetRange { get => range; set => range = value; }
+    public bool IsPlaced { get; set ; }
 
     void Awake()
     {
@@ -30,7 +31,7 @@ public class Deposits : MonoBehaviour, IPlaceable
     }
     public void Placed()
     {
-        
+        IsPlaced = true;
     }
        void OnDrawGizmos()
     {

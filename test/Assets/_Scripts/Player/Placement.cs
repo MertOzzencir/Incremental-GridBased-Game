@@ -23,9 +23,20 @@ public class Placement : MonoBehaviour
         rotationState = 0;
         InputManager.Instance.OnLeftClick += PlaceObject;
         InputManager.Instance.OnRotate += RotateObjectByButton;
+        InputManager.Instance.OnBuildMode += BuildModeChecker;
         indicator = Instantiate(gridIndicatorPrefab);
-        
+
     }
+
+    private void BuildModeChecker(bool obj)
+    {
+        if (!obj)
+        {
+            if (lastPlaceObjectPrefab != null)
+                UnselectObject();
+        }
+    }
+
     private void Update()
     {
         if (placeObject == null)
@@ -72,7 +83,7 @@ public class Placement : MonoBehaviour
     }
     public void RecieveObject(IPlaceable recievedObject)
     {
-        if(targetPositionCO != null)
+        if (targetPositionCO != null)
             return;
         lastPlaceObjectPrefab = recievedObject;
         indicator.SetActive(true);
@@ -80,9 +91,7 @@ public class Placement : MonoBehaviour
         {
             if (placeObject.Index == recievedObject.Index)
             {
-                placeObject.UnPlaced();
-                placeObject = null;
-                indicator.SetActive(false);
+                UnselectObject();
                 return;
             }
             else
@@ -95,6 +104,16 @@ public class Placement : MonoBehaviour
         else
             SetObject(recievedObject);
 
+    }
+
+    private void UnselectObject()
+    {
+        if (placeObject != null)
+        {
+            placeObject.UnPlaced();
+            placeObject = null;
+            indicator.SetActive(false);
+        }
     }
 
     private void RotateObjectByButton()

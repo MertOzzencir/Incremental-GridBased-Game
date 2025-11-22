@@ -17,7 +17,9 @@ public class Interact : MonoBehaviour
         {
             if(a.transform.TryGetComponent(out IInteractable interactable))
             {
+                Debug.Log("Interacted Object");
                 interactable.Interact();
+                break;
             }
         }
     }

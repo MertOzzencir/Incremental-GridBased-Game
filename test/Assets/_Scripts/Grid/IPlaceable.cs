@@ -3,7 +3,7 @@ using UnityEngine;
 
 public interface IPlaceable
 {
-
+    public bool IsPlaced{get;set;}
     public int Index{get;set;}
     public GameObject GetGameObject();
     public Vector2Int GetSize{ get; set;}
