@@ -57,7 +57,7 @@ public class Placement : MonoBehaviour
     }
     private void PlaceObject()
     {
-        if (placeObject == null)
+        if (placeObject == null || targetPositionCO != null)
             return;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;

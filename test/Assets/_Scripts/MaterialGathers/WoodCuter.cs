@@ -20,6 +20,7 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     void Awake()
     {
         objectCollider = GetComponent<Collider>();
+        objectCollider.enabled =false;
     }
     public GameObject GetGameObject()
     {
@@ -43,11 +44,11 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     }
     public void Placed()
     {
+        positionsInRange.Clear();
+        CalculatePositions();
         IsPlaced = true;
         Cursor.visible = true;
         objectCollider.enabled = true;
-        positionsInRange.Clear();
-        CalculatePositions();
         MeshRenderer[] childObjects = GetComponentsInChildren<MeshRenderer>();
         foreach (var a in childObjects)
         {

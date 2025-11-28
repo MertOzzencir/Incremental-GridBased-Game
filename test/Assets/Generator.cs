@@ -1,27 +1,25 @@
+using System.Collections.Generic;
 using UnityEngine;
 
-public class Generator : MonoBehaviour, IElectrikOutput
+public class Generator : MonoBehaviour, IGenerator
 {
-    [SerializeField] private float powerGenerationPerSecond;
-    [SerializeField] private Transform outputSocket;
-    public static float TotalEnergyPerSecond;
+    [SerializeField] private Transform inputSocket;
+    public List<IElectricNode> Neighbours { get; set; } = new List<IElectricNode>();
+    public bool Power { get; set; } = true;
+    public Transform ConnectSocket { get => inputSocket; set => inputSocket = value; }
 
-    public Transform OutputSocket { get => outputSocket; set => outputSocket = value; }
-
-    void Awake()
+    public bool CanTie(IElectricNode target)
     {
-        TotalEnergyPerSecond = powerGenerationPerSecond;
+        foreach(var a in Neighbours)
+        {
+            if(target == a)
+                return false;
+        }
+        
+        return true;
     }
 
-    void Update()
+    public void PowerChanged(bool powerState)
     {
-        //Debug.Log(TotalEnergyPerSecond);
     }
-
-    public GameObject GetGameObject()
-    {
-        return this.gameObject;
-    }
-
-
 }

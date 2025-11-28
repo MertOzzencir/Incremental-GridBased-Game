@@ -120,7 +120,9 @@ public class InputManager : MonoBehaviour
         inputManager.Player.Interact.performed -= Interacts;
         inputManager.Player.BuildModeOn.performed -= BuildModeOn;
 
+        inputManager.BuildMode.MouseLeftButton.started -= MouseActionStarted;
         inputManager.BuildMode.MouseLeftButton.performed -= MouseLeftButton;
+        inputManager.BuildMode.MouseLeftButton.canceled -= MouseActionCanceled;
         inputManager.BuildMode.Rotate.performed -= RotateObject;
         inputManager.BuildMode.PickNumbers.performed -= PickNumbers;
         inputManager.BuildMode.BuildModeOff.performed -= BuildModeOff;
