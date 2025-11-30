@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
+public class Gather : MonoBehaviour, IPlaceable, IPickable, IElectricNode
 {
+    [SerializeField] private float cooldownTimer;
+    [SerializeField] private Transform socketInput;
     [SerializeField] private Vector2Int objectSizeInAxis;
     [SerializeField] private GameObject visual;
     [SerializeField] private int index;
@@ -13,14 +15,19 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     public Vector3Int PlacedPosition { get; set; }
     public int Index { get => index; set => value = index; }
     public Vector2Int GetRange { get => range; set => range = value; }
-    public bool IsPlaced { get; set ; }
+    public bool IsPlaced { get; set; }
+    public List<IElectricNode> Neighbours { get; set; } = new List<IElectricNode>();
+    public bool Power { get; set; } = false;
+    public Transform ConnectSocket { get => socketInput; set => socketInput = value; }
 
     private List<Vector3Int> positionsInRange = new List<Vector3Int>();
+    private Animator anim;
     private Collider objectCollider;
     void Awake()
     {
         objectCollider = GetComponent<Collider>();
-        objectCollider.enabled =false;
+        objectCollider.enabled = false;
+        anim = GetComponentInChildren<Animator>();
     }
     public GameObject GetGameObject()
     {
@@ -31,13 +38,13 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     {
         List<GridSpec> gridCheck = new List<GridSpec>();
         gridCheck = GridSystem.Instance.SearchInGrid(positionsInRange);
-        foreach(var a in gridCheck)
+        foreach (var a in gridCheck)
         {
-            if(a.PlacedObject.PlacedPosition != PlacedPosition)
+            if (a.PlacedObject.PlacedPosition != PlacedPosition)
             {
-                if(a.PlacedObject.GetGameObject().TryGetComponent(out Deposits deposit))
+                if (a.PlacedObject.GetGameObject().TryGetComponent(out Deposits deposit))
                 {
-                    deposit.Dig();
+                    deposit.Dig(1);
                 }
             }
         }
@@ -49,11 +56,7 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
         IsPlaced = true;
         Cursor.visible = true;
         objectCollider.enabled = true;
-        MeshRenderer[] childObjects = GetComponentsInChildren<MeshRenderer>();
-        foreach (var a in childObjects)
-        {
-            a.material.color = new Color(a.material.color.r, a.material.color.g, a.material.color.b, 1f);
-        }
+
     }
     public void UnPlaced()
     {
@@ -66,11 +69,7 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
     public void Picked()
     {
         Cursor.visible = false;
-        MeshRenderer[] childObjects = GetComponentsInChildren<MeshRenderer>();
-        foreach (var a in childObjects)
-        {
-            a.material.color = new Color(a.material.color.r, a.material.color.g, a.material.color.b, 0.2f);
-        }
+
     }
 
     [ContextMenu("Delete Object On Grid")]
@@ -79,18 +78,11 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
         GridSystem.Instance.DeleteOnGrid(PlacedPosition, this);
         Destroy(GetGameObject());
     }
-
-   
-
-    public void Interact()
-    {
-        Harvest();
-    }
     private void CalculatePositions()
     {
         positionsInRange.Clear();
 
-        
+
         Vector3 center = transform.position + new Vector3(GetSize.x * 0.5f, 0f, GetSize.y * 0.5f);
 
         int startX = Mathf.FloorToInt(center.x - GetRange.x * 0.5f);
@@ -107,10 +99,48 @@ public class WoodCuter : MonoBehaviour, IPlaceable, IPickable,IInteractable
             }
         }
     }
-     void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         Vector3 center = transform.position + new Vector3(GetSize.x * 0.5f, 0.2f, GetSize.y * 0.5f);
         Gizmos.DrawCube(center, new Vector3(GetRange.x, 1, GetRange.y));
     }
-   
+
+
+    //Electric
+    public void PowerChanged(bool powerState)
+    {
+        if (powerState)
+        {
+            if (!Power)
+            {
+                anim.SetBool("OnCut", true);
+                InvokeRepeating(nameof(Harvest), 1f, cooldownTimer);
+            }
+            Power = true;
+        }
+        else
+        {
+            Power = false;
+
+        }
+    }
+    public bool CanTie(IElectricNode target)
+    {
+        if (Neighbours.Count >= 3)
+            return false;
+        foreach (var a in Neighbours)
+        {
+            if (target == a)
+                return false;
+        }
+        if (!Power)
+        {
+            if (target.Power)
+            {
+                anim.SetBool("OnCut", true);
+                InvokeRepeating(nameof(Harvest), 1f, cooldownTimer);
+            }
+        }
+        return true;
+    }
 }

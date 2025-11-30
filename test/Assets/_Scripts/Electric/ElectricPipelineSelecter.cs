@@ -17,12 +17,14 @@ public class ElectricPipelineSelecter : MonoBehaviour
         if (obj)
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.SphereCast(ray,radius: 0.5f, out RaycastHit hit, Mathf.Infinity))
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Mathf.Infinity);
+            foreach (var a in hits)
             {
-                if (hit.transform.TryGetComponent(out selectedNode))
+                if (a.transform.TryGetComponent(out selectedNode))
                 {
+                    Debug.Log("Found the object");
+                    return;
                 }
-
             }
         }
         else
@@ -31,14 +33,15 @@ public class ElectricPipelineSelecter : MonoBehaviour
                 return;
 
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.SphereCast(ray,radius: 0.5f, out RaycastHit hit, Mathf.Infinity))
+            RaycastHit[] hits = Physics.SphereCastAll(ray, 0.5f, Mathf.Infinity);
+            foreach (var a in hits)
             {
-                if (hit.transform.TryGetComponent(out IElectricNode target) && selectedNode != target)
+                if (a.transform.TryGetComponent(out IElectricNode target) && selectedNode != target)
                 {
                     if (target.CanTie(selectedNode))
                     {
-                       
 
+                        Debug.Log("Connected");
                         RopeConnection(target);
                         selectedNode.Neighbours.Add(target);
                         target.Neighbours.Add(selectedNode);
@@ -50,7 +53,7 @@ public class ElectricPipelineSelecter : MonoBehaviour
                     }
                 }
             }
-            selectedNode = null;
+
         }
     }
 

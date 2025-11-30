@@ -48,11 +48,7 @@ public class ElectricPipes : MonoBehaviour, IElectricNode, IPlaceable, IPickable
         IsPlaced = true;
         Cursor.visible = true;
         objectCollider.enabled = true;
-        MeshRenderer[] childObjects = GetComponentsInChildren<MeshRenderer>();
-        foreach (var a in childObjects)
-        {
-            a.material.color = new Color(a.material.color.r, a.material.color.g, a.material.color.b, 1f);
-        }
+
     }
     public void UnPlaced()
     {
@@ -63,11 +59,7 @@ public class ElectricPipes : MonoBehaviour, IElectricNode, IPlaceable, IPickable
     public void Picked()
     {
         Cursor.visible = false;
-        MeshRenderer[] childObjects = GetComponentsInChildren<MeshRenderer>();
-        foreach (var a in childObjects)
-        {
-            a.material.color = new Color(a.material.color.r, a.material.color.g, a.material.color.b, 0.2f);
-        }
+
     }
 
     public void PowerChanged(bool powerState)
@@ -77,23 +69,17 @@ public class ElectricPipes : MonoBehaviour, IElectricNode, IPlaceable, IPickable
         if (powerState)
         {
             Power = true;
-            foreach (var a in meshRenderers)
-            {
-                a.material.color = PowerOnColor;
-            }
+
         }
         else
         {
             Power = false;
-            foreach (var a in meshRenderers)
-            {
-                a.material.color = new Color(0, 0, 0, 1);
-            }
+
         }
     }
     public bool CanTie(IElectricNode target)
     {
-        if(Neighbours.Count >=3)
+        if (Neighbours.Count >= 3)
             return false;
         foreach (var a in Neighbours)
         {

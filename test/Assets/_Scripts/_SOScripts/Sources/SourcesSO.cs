@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class SourcesSO : ScriptableObject
 {
+    public int MaterialHealth;
     public string SourceName;
     public SourceType SourceType;
     public Sprite UIIcon;

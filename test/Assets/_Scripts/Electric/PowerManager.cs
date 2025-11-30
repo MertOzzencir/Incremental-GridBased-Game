@@ -19,7 +19,6 @@ public class PowerManager : MonoBehaviour
         while(queue.Count != 0)
         {
             IElectricNode current = queue.Dequeue();
-            Debug.Log("Checking: " + current);
             foreach(var a in current.Neighbours)
             {
                 if (!visited.Contains(a))

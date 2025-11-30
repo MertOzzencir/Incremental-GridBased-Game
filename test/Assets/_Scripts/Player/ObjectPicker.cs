@@ -30,7 +30,6 @@ public class ObjectPicker : MonoBehaviour
             placer.RecieveObject(objects[1]);
             break;
             case 3:
-            placer.RecieveObject(objects[2]);
             break;
             case 4:
             break;

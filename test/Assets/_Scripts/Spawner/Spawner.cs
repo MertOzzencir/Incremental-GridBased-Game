@@ -46,6 +46,8 @@ public class Spawner : MonoBehaviour
                 refTimer = 0;
                 spawnedObjectTimer++;
                 nextObject.GetGameObject().SetActive(true);
+                Quaternion randomRotation = Quaternion.Euler(new Vector3(nextObject.Orientation.transform.rotation.x,Random.Range(0,180),nextObject.Orientation.transform.rotation.z));
+                nextObject.Orientation.transform.rotation =randomRotation;
                 nextObject.Placed();
                 ReadyNextObject();
             }
