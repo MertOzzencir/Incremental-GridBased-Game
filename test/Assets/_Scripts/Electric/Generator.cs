@@ -10,16 +10,34 @@ public class Generator : MonoBehaviour, IGenerator
 
     public bool CanTie(IElectricNode target)
     {
-        foreach(var a in Neighbours)
+        foreach (var a in Neighbours)
         {
-            if(target == a)
+            if (target == a)
                 return false;
         }
-        
+
         return true;
     }
 
-    public void PowerChanged(bool powerState)
+    public void PowerChanged(bool powerState, Material state)
     {
+
+        MeshRenderer[] robe = ConnectSocket.GetComponentsInChildren<MeshRenderer>();
+        foreach (var a in robe)
+        {
+            a.material = state;
+
+            if (powerState)
+            {
+                Power = true;
+
+
+            }
+            else
+            {
+                Power = false;
+
+            }
+        }
     }
 }

@@ -7,5 +7,5 @@ public interface IElectricNode
     public bool Power{get;set;}
     public Transform ConnectSocket{get;set;}
     public bool CanTie(IElectricNode target);
-    public void PowerChanged(bool powerState);
+    public void PowerChanged(bool powerState,Material electricStateMaterial);
 }

@@ -1,9 +1,11 @@
 using System;
+using System.Collections;
+using GogoGaga.OptimizedRopesAndCables;
 using UnityEngine;
 
 public class ElectricPipelineSelecter : MonoBehaviour
 {
-    [SerializeField] private GameObject ropePrefab;
+    [SerializeField] private Rope rope;
     public static event Action<IElectricNode> OnPipelineChanged;
     private IElectricNode selectedNode;
 
@@ -41,31 +43,57 @@ public class ElectricPipelineSelecter : MonoBehaviour
                     if (target.CanTie(selectedNode))
                     {
 
-                        Debug.Log("Connected");
-                        RopeConnection(target);
+                        Rope ropesa = Instantiate(rope);
+                        ropesa.transform.position = selectedNode.ConnectSocket.position;
+                        ropesa.transform.parent = selectedNode.ConnectSocket.transform;
+                        ropesa.startPoint = target.ConnectSocket;
+                        ropesa.endPoint = selectedNode.ConnectSocket;
+
+                        float distance = Vector3.Distance(
+                            selectedNode.ConnectSocket.position,
+                            target.ConnectSocket.position
+                        );
+                        ropesa.ropeLength = distance + 1.5f;
+
+                        StartCoroutine(InitRopeMeshNextFrame(ropesa));
+
                         selectedNode.Neighbours.Add(target);
                         target.Neighbours.Add(selectedNode);
                         OnPipelineChanged?.Invoke(target);
-                        // foreach (var a in selectedNode.Neighbours)
-                        //     Debug.Log("Selected neighbours: " + a);
-                        // foreach (var a in target.Neighbours)
-                        //     Debug.Log("Target neighbours: " + a);
+                        // Debug.Log("Connected");
+                        // Rope ropesa = Instantiate(rope) as Rope;
+                        // ropesa.transform.position = selectedNode.ConnectSocket.position;
+                        // ropesa.startPoint = target.ConnectSocket;
+                        // ropesa.endPoint = selectedNode.ConnectSocket;
+                        // float distance = Vector3.Distance(selectedNode.ConnectSocket.position, target.ConnectSocket.position);
+                        // ropesa.ropeLength = distance ;
+                        // ropesa.GetComponent<RopeMesh>().InitializeComponents();
+                        // ropesa.GetComponent<RopeMesh>().GenerateMesh();
+                        // ropesa.FireEvent();
+                        // selectedNode.Neighbours.Add(target);
+                        // target.Neighbours.Add(selectedNode);
+                        // OnPipelineChanged?.Invoke(target);
+                        // // foreach (var a in selectedNode.Neighbours)
+                        // //     Debug.Log("Selected neighbours: " + a);
+                        // // foreach (var a in target.Neighbours)
+                        // //     Debug.Log("Target neighbours: " + a);
                     }
                 }
             }
 
         }
     }
-
-    private void RopeConnection(IElectricNode target)
+    private IEnumerator InitRopeMeshNextFrame(Rope ropesa)
     {
-        GameObject rope = Instantiate(ropePrefab);
-        rope.transform.position = selectedNode.ConnectSocket.position;
-        Vector3 directionVector = (target.ConnectSocket.position - selectedNode.ConnectSocket.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(directionVector);
-        rope.transform.rotation = lookRotation;
-        float distance = Vector3.Distance(target.ConnectSocket.position, selectedNode.ConnectSocket.position);
-        rope.transform.localScale = new Vector3(rope.transform.localScale.x, rope.transform.localScale.y, distance);
-        rope.transform.parent = target.ConnectSocket;
+        // Rope kendi Start/OnEnable/Update'lerini bir çalıştırsın
+        yield return null;
+
+        var mesh = ropesa.GetComponent<RopeMesh>();
+        mesh.InitializeComponents();
+        mesh.GenerateMesh();
     }
+
+
+
+
 }

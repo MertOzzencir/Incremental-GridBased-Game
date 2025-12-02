@@ -7,16 +7,16 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: GridMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: e977a2e73514b784291a9308378b8364, type: 3}
+  m_Name: ElectricOnMaterial
+  m_Shader: {fileID: -6465566751694194690, guid: a072743ff05c79442ac4a6f3a43682ac, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2999
+  m_CustomRenderQueue: 2003
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
@@ -38,15 +38,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Fuzziness: 0.47
     - _QueueControl: 0
-    - _QueueOffset: -1
-    - _Thickness: 0.9
+    - _QueueOffset: 3
+    - _Range: 0.64
+    - _Speed: 1
+    - _WaveAmount: 0.3
+    - _expand: 0.23
     m_Colors:
-    - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _Tilling: {r: 50, g: 50, b: 0, a: 0}
+    - _Color: {r: 0.17056656, g: 1, b: 0, a: 1}
+    - _OffColor: {r: 0.34837642, g: 0.3460995, b: 0.49865216, a: 1}
+    - _PowerColor: {r: 1, g: 0.9333334, b: 0, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
---- !u!114 &44826649323539740
+--- !u!114 &5915549179520864255
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

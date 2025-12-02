@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ElectricPipes : MonoBehaviour, IElectricNode, IPlaceable, IPickable
 {
+    
     [SerializeField] private Transform inputSocket;
     [SerializeField] private Color PowerOnColor;
     [SerializeField] private GameObject visual;
@@ -62,19 +63,23 @@ public class ElectricPipes : MonoBehaviour, IElectricNode, IPlaceable, IPickable
 
     }
 
-    public void PowerChanged(bool powerState)
+    public void PowerChanged(bool powerState, Material electricStateMaterial)
     {
-        MeshRenderer[] meshRenderers = GetComponentsInChildren<MeshRenderer>();
-
+        
+       MeshRenderer[] robe = ConnectSocket.GetComponentsInChildren<MeshRenderer>();
+        foreach (var a in robe)
+        {
+            a.material = electricStateMaterial;
+        }
         if (powerState)
         {
             Power = true;
-
+            visual.GetComponentInChildren<MeshRenderer>().material.color = Color.green;
         }
         else
         {
             Power = false;
-
+            visual.GetComponentInChildren<MeshRenderer>().material.color = Color.red;
         }
     }
     public bool CanTie(IElectricNode target)

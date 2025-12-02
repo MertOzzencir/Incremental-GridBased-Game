@@ -107,8 +107,13 @@ public class Gather : MonoBehaviour, IPlaceable, IPickable, IElectricNode
 
 
     //Electric
-    public void PowerChanged(bool powerState)
+    public void PowerChanged(bool powerState, Material materialState)
     {
+        MeshRenderer[] robe = ConnectSocket.GetComponentsInChildren<MeshRenderer>();
+        foreach (var a in robe)
+        {
+            a.material = materialState;
+        }
         if (powerState)
         {
             if (!Power)
