@@ -143,7 +143,7 @@ public class Gather : MonoBehaviour, IPlaceable, IPickable, IElectricNode
             if (target.Power)
             {
                 anim.SetBool("OnCut", true);
-                InvokeRepeating(nameof(Harvest), 1f, cooldownTimer);
+                InvokeRepeating(nameof(Harvest), .5f, cooldownTimer);
             }
         }
         return true;

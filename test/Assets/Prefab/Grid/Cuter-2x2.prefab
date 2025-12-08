@@ -370,5 +370,5 @@ MonoBehaviour:
   objectSizeInAxis: {x: 2, y: 2}
   visual: {fileID: 5907494989760854177}
   index: 0
-  range: {x: 7, y: 7}
+  range: {x: 6, y: 6}
   depositType: 0
