@@ -1,9 +1,9 @@
-<img width="2560" height="1600" alt="Ekran Görüntüsü (23)" src="https://github.com/user-attachments/assets/54275b4d-29cb-4725-ba27-b94cc9a59568" /># Grid-Based Incremental Game Prototype
+# Grid-Based Incremental Game Prototype
 
 A technical prototype exploring grid systems, graph algorithms, and electrical network simulation in Unity. Built as a learning project to understand spatial data structures, pathfinding algorithms, and shader programming.
 
-
-![Uploading Ekran Görüntüsü (29).png…]()
+![Power Network System](screenshots/Ekran_Görüntüsü__29_.png)
+*Complete system: Grid placement, power distribution network, and resource gathering*
 
 ## 🎯 Project Goals
 
@@ -33,7 +33,8 @@ Dictionary<Vector3Int, GridSpec> grid
 - Fast lookups without iterating through empty cells
 - Easy to extend to 3D or irregular grids
 
-![Grid Placement](screenshots/placement_system.png)
+![Clean Grid View](screenshots/Ekran_Görüntüsü__24_.png)
+*Grid system with resource deposits and unpowered electrical pole (red)*
 
 ### 2. Electrical Power Network (BFS Algorithm)
 
@@ -56,7 +57,11 @@ HashSet<IElectricNode> visited = new HashSet<IElectricNode>();
 - BFS for connected component detection
 - Real-time network recalculation on topology changes
 
-![Power Network](screenshots/power_network.png)
+![Power Connection](screenshots/Ekran_Görüntüsü__25_.png)
+*Powered pole (green) connected to generator via cable*
+
+![Network Expansion](screenshots/Ekran_Görüntüsü__26_.png)
+*Disconnected network section - red poles indicate no power source*
 
 ### 3. Custom Rope/Cable System
 
@@ -68,7 +73,8 @@ Modified a third-party rope package to create dynamic electrical cables:
 **Shader Challenge:**
 Creating smooth wave effects using vertex color data instead of UV coordinates required understanding how Unity's mesh pipeline works.
 
-![Cable System](screenshots/cables.png)
+![Complete Network](screenshots/Ekran_Görüntüsü__28_.png)
+*Full power network with BFS connecting all nodes to the generator*
 
 ### 4. Interface-Driven Architecture
 
@@ -86,35 +92,27 @@ IGenerator    // Power-producing structures
 - Components can implement multiple behaviors
 - Clear separation of concerns
 
-## 📸 Screenshots
+## 📸 Visual Progression
 
-### Grid System in Action
-![Grid Overview](screenshots/Ekran_Görüntüsü__16_.png)
-*Custom grid with placement validation*
+### 1. Initial Grid Setup
+![Grid Setup](screenshots/Ekran_Görüntüsü__24_.png)
+*Base grid with resource deposits and an unpowered pole*
 
-### Power Network - Unpowered State
-![No Power](screenshots/Ekran_Görüntüsü__17_.png)
-*Red poles indicate no power connection*
+### 2. First Power Connection
+![First Connection](screenshots/Ekran_Görüntüsü__25_.png)
+*Pole turns green when connected to generator - BFS validates power source*
 
-### Connecting Power Cables
-![Cable Connection](screenshots/Ekran_Görüntüsü__18_.png)
-*Dynamic cable rendering between poles*
+### 3. Isolated Network
+![Isolated Network](screenshots/Ekran_Görüntüsü__26_.png)
+*Adding poles without generator connection - remains red (no power)*
 
-### Power Network Growing
-![Network Expansion](screenshots/Ekran_Görüntüsü__19_.png)
-*BFS algorithm detects all connected nodes*
+### 4. Multi-Tile Building
+![Building Placement](screenshots/Ekran_Görüntüsü__28_.png)
+*2x2 generator building with grid validation system*
 
-### Powered Network
-![Powered Network](screenshots/Ekran_Görüntüsü__20_.png)
-*Green color = connected to generator*
-
-### Multi-Tile Building Placement
-![Multi-Tile](screenshots/Ekran_Görüntüsü__21_.png)
-*2x2 building with placement validation*
-
-### Complete System
-![Full System](screenshots/Ekran_Görüntüsü__22_.png)
-*Generator, power network, and resource deposits working together*
+### 5. Complete Power Grid
+![Full System](screenshots/Ekran_Görüntüsü__29_.png)
+*BFS algorithm connects all nodes, cables show power flow with custom shader*
 
 ## 💡 What I Learned
 
