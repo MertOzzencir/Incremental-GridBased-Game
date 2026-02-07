@@ -1,8 +1,9 @@
-# Grid-Based Incremental Game Prototype
+<img width="2560" height="1600" alt="Ekran Görüntüsü (23)" src="https://github.com/user-attachments/assets/54275b4d-29cb-4725-ba27-b94cc9a59568" /># Grid-Based Incremental Game Prototype
 
 A technical prototype exploring grid systems, graph algorithms, and electrical network simulation in Unity. Built as a learning project to understand spatial data structures, pathfinding algorithms, and shader programming.
 
-![Grid and Power Network](screenshots/grid_overview.png)
+
+![Uploading Ekran Görüntüsü (29).png…]()
 
 ## 🎯 Project Goals
 
